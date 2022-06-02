@@ -1,0 +1,11 @@
+0) for start I will just restart my router and if it still does not work I will follow the next steps.
+1) Do we immediately ping the server through the console, does it work or not?
+2) if there is no ping, then we check the ping 8888 dns google if we have en exception or error then we have no internet.
+3) If the ping in the first case turned out to be by IP address, then we also check resolve domain name of server we can do it by ping the domain name of the server. If we have no errors then go to next.
+4) If we can ping by address but not by domain name the dns server is not working so we can try to connect by ssh IP address, not by the dns name if ssh works we need to fix dns server problem(out of the scope of this requirement)
+5) If the previous option does not work then we need to check if other services are reachable on this server if we have started http server we can check by command "telnet <ip dress of the server> <80 or 443>" if there is a response then the server is not fully broken.
+6)" telnet <ip dress of the server> 22" if there is no response then we have to case possible
+           1) sshd service on the server does not work
+           2) protocol ssh is blocked by the provider (to check it we need another server where ssh work) or connect to a VPN and check is it reachable with a VPN.
+
+if it is still unavailable so sshd service is dead(RIP)
